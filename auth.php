@@ -15,7 +15,7 @@
         <input type="password" name="" placeholder="Write your password">
         <button>Text</button>
         <p>
-            Do you have not account? <a href ="/register.php">Registration</a>
+            Do you have not account? <a href ="register.php">Registration</a>
         </p>
     </form>
 

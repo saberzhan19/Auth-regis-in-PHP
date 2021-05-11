@@ -8,20 +8,21 @@
 <body>
     
     <!-- Форма регистраций -->
-    <form method="post" action="">
+
+    <form action="vendor/signup.php" method="post" enctype="multipart/form-data">
         <label>Fullname</label>
-        <input type="text" name="" placeholder="Write your fullname">
+        <input type="text" name="full_name" placeholder="Write your fullname">
         <label>Login</label>
-        <input type="text" name="" placeholder="Write your login">
+        <input type="text" name="login" placeholder="Write your login">
         <label>Email</label>
-        <input type="email" name="" placeholder="Write your email">
+        <input type="email" name="email" placeholder="Write your email">
         <label>Avatar</label>
-        <input type="file">
+        <input type="file" name="avatar">
         <label>Password</label>
-        <input type="password" name="" placeholder="Write your password">
+        <input type="password" name="password" placeholder="Write your password">
         <button>Text</button>
         <p>
-            Do you have not account? <a href ="#">Registration</a>
+            Do you have yet account? <a href ="auth.php">Authorization</a>
         </p>
     </form>
 

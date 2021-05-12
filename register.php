@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +13,7 @@
     
     <!-- Форма регистраций -->
 
-    <form action="vendor/signup.php" method="post" enctype="multipart/form-data">
+    <form action="vendor/signup.php" method="POST" enctype="multipart/form-data">
         <label>Fullname</label>
         <input type="text" name="full_name" placeholder="Write your fullname">
         <label>Login</label>
@@ -20,9 +24,18 @@
         <input type="file" name="avatar">
         <label>Password</label>
         <input type="password" name="password" placeholder="Write your password">
+        <label>Password_confirm</label>
+        <input type="password" name="password_confirm" placeholder="Write your password confirm">
         <button>Text</button>
         <p>
             Do you have yet account? <a href ="auth.php">Authorization</a>
+        </p>
+        <p class="msg">
+            <?php
+                echo (!isset($_SESSION['message'])); //вывели 
+                
+                unset($_SESSION['message']); //уничтожили
+            ?>
         </p>
     </form>
 

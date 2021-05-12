@@ -8,5 +8,5 @@ $connect = mysqli_connect('localhost','root','root','logreg3');
 if(!$connect){
     die('Error connect to Database');
 } else{
-    echo 'Working!';
+    // echo 'Working!';
 }

@@ -26,17 +26,16 @@
         <input type="password" name="password" placeholder="Write your password">
         <label>Password_confirm</label>
         <input type="password" name="password_confirm" placeholder="Write your password confirm">
-        <button>Text</button>
+        <button type="submit">Text</button>
         <p>
             Do you have yet account? <a href ="auth.php">Authorization</a>
         </p>
-        <p class="msg">
-            <?php
-                echo (!isset($_SESSION['message'])); //вывели 
-                
-                unset($_SESSION['message']); //уничтожили
-            ?>
-        </p>
+        <?php
+            if (isset($_SESSION['message'])){
+                echo '<p class="msg"> ' . $_SESSION['message'] . '</p>';//вывели 
+            }
+            unset($_SESSION['message']); //уничтожили и сообщение повторно не выводиться
+        ?>
     </form>
 
 </body>

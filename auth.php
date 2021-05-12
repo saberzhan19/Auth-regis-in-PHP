@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +11,21 @@
 <body>
     
     <!-- Форма регистраций -->
-    <form method="post" action="">
+    <form action="vendor/signin.php" method="post">
         <label>Login</label>
-        <input type="text" name="" placeholder="Write your login">
+        <input type="text" name="login" placeholder="Write your login">
         <label>Password</label>
-        <input type="password" name="" placeholder="Write your password">
-        <button>Text</button>
+        <input type="password" name="password" placeholder="Write your password">
+        <button type="submit">Text</button>
         <p>
             Do you have not account? <a href ="register.php">Registration</a>
         </p>
+        <?php
+            if (isset($_SESSION['message'])){
+                echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';//вывели 
+            }
+            unset($_SESSION['message']); //уничтожили и сообщение повторно не выводиться
+        ?>
     </form>
 
 </body>

@@ -12,20 +12,21 @@
 <body>
     
     <!-- Форма регистраций -->
+    <!-- required в форме заполнение обязывает каждое поле, без нее нажав на кнопку пустые данные попадают БД -->
 
-    <form action="vendor/signup.php" method="POST" enctype="multipart/form-data">
+    <form action="vendor/signup.php" method="POST" enctype="multipart/form-data" required>
         <label>Fullname</label>
-        <input type="text" name="full_name" placeholder="Write your fullname">
+        <input type="text" name="full_name" placeholder="Write your fullname" required>
         <label>Login</label>
-        <input type="text" name="login" placeholder="Write your login">
+        <input type="text" name="login" placeholder="Write your login" required>
         <label>Email</label>
-        <input type="email" name="email" placeholder="Write your email">
+        <input type="email" name="email" placeholder="Write your email" required>
         <label>Avatar</label>
         <input type="file" name="avatar">
         <label>Password</label>
-        <input type="password" name="password" placeholder="Write your password">
+        <input type="password" name="password" placeholder="Write your password" required>
         <label>Password_confirm</label>
-        <input type="password" name="password_confirm" placeholder="Write your password confirm">
+        <input type="password" name="password_confirm" placeholder="Write your password confirm" required>
         <button type="submit">Text</button>
         <p>
             Do you have yet account? <a href ="auth.php">Authorization</a>

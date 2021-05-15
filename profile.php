@@ -1,5 +1,9 @@
 <?php
     session_start();
+
+    if(!$_SESSION['login']){
+        header('Location: /');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -12,10 +16,11 @@
 </head>
 <body>
 
-    <form>
-        <img src="?= $_SESSION['user']['avatar'] ?" width="100" alt="">
-        <h2><?= $_SESSION['user']['full_name'] ?></h2>
-        <a href="http://"><?= $_SESSION['user']['full_name'] ?></a>
+    <form enctype="multipart/form-data">
+        <img src= "<?= $_SESSION['login']['avatar'] ?>" width="300" alt="">
+        <h2 style="margin: 10px 0;"><?= $_SESSION['login']['full_name'] ?></h2>
+        <a href="#"><?= $_SESSION['login']['full_name'] ?></a>
+        <a href="" class="Logout">Exit</a>
     </form>
 
 </body>

@@ -1,5 +1,9 @@
 <?php
     session_start();
+
+    if($_SESSION['login']){
+        header('Location: profile.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

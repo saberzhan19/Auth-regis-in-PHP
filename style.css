@@ -1,0 +1,56 @@
+/* забавно, все это работает после того, как набрав в адресной строке в браузере, нужно перегрузит страницу, только тогда вступает силу */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace, sans-serif;
+}
+
+a {
+    color: rgb(85, 14, 250);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+p {
+    margin: 10px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+input {
+    margin: 10px 0;
+    padding: 10px;
+    border: unset;
+    border-bottom: 2px solid rgb(247, 247, 145);
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    background: linear-gradient(45deg , #21f83d, #ec0b0b) ;
+    border: unset;
+    cursor: pointer;
+}
+.msg{
+    border: 2px solid #d0f30b;
+    border-radius: 3px;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+.Logout{
+    color: #ec0b0b;
+}

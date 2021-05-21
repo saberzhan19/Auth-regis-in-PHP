@@ -20,8 +20,10 @@ if(isset($data['register'])){
     if(trim($data['email']) == ''){
         $errors[] = "Укажите почту";
     }
-    
+    if(trim($data['password']) == ''){
+        $errors[] = "Напишите пароль";
     }
+        
     if(trim($data['password']) != trim($data['password_confirm'])){
         $errors[] = "Не верный пароль!";
     }

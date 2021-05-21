@@ -3,13 +3,15 @@ require "db.php";
 $data = $_POST;
 $showError = false;//для вывода списка ошибок
 
+//Забавное примечание! Благодаря папки ReadBean, которая была скачано сайта, например я создал БД, а она в свою очеред все остальное(таблицу со всеми данными), в регистраций я вписал данные, они ушли в БД!
+
 //здесь отслежывают,проверить была ли отправлена форма
 if(isset($data['register'])){
     $errors = array();
     $showError = True;
 
     // и по очериди проверять каждое поле для того чтобы в каждой форме писали необходимое а не ставили символы например в поле имени
-    if(trim($data['full_name']) == ''){//и если тремирование (от слова trim) равна 
+    if(trim($data['full_name']) == ''){//и если тремирование (от слова trim) равна ==
         $errors[] = "Укажите имя";
     }
     if(trim($data['login']) == ''){
@@ -18,8 +20,7 @@ if(isset($data['register'])){
     if(trim($data['email']) == ''){
         $errors[] = "Укажите почту";
     }
-    if(trim($data['password']) == ''){
-        $errors[] = "Укажите пароль";
+    
     }
     if(trim($data['password']) != trim($data['password_confirm'])){
         $errors[] = "Не верный пароль!";
@@ -32,7 +33,7 @@ if(isset($data['register'])){
     }
     //и делаем проверку если у нас нету ошибок, то мы выполняем запись в БД
     if(empty($errors)){
-        $user = R::dispense('users');
+        $user = R::dispense('users'); //dispense команда на запись БД
         $user->full_name = $data['full_name'];
         $user->login = $data['login'];
         $user->email = $data['email'];
@@ -76,10 +77,11 @@ if(isset($data['register'])){
             Do you have yet account? <a href ="auth.php">Authorization</a>
         </p>
         
+        <!-- здесь будут выводиться ошибки, если конечно они есть, если нет, то ничего не выведет -->
+        <p><?php if($showError){echo showError($errors); } ?></p>
+        <!-- забавно в html я писал в конце require, как бы обязывая заполнить поле, команда сверху в 1 поле все обьединяет -->
+        
     </form>
-    <!-- здесь будут выводиться ошибки, если конечно они есть, если нет, то ничего не будет -->
-    <p><?php if($showError){echo showError($errors);} ?></p>
-    <!-- забавно в html я писал в конце require, как бы обязывая заполнить поле, команда сверху в 1 поле все обьединяет -->
 
 </body>
 </html>

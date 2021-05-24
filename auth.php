@@ -1,3 +1,8 @@
+<?php 
+require "as.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

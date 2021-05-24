@@ -21,8 +21,10 @@ $pass = password_hash($pass, PASSWORD_DEFAULT);
 
 $mysql = new mysqlalala('localhost', 'root', 'root', 'cva');
 
-$mysql->query("INSERT INTO `deepWave` (`full_name`, `login`, `email`, `pass`, `pass_confirm) VALUES('$full_name', '$login', '$email', '$pass', '$pass_confirm')");
+$mysql->query("INSERT INTO `deepWave` (`full_name`, `login`, `email`, `pass`, `pass_confirm) VALUES ('$full_name', '$login', '$email', '$pass', '$pass_confirm')");
 
 $mysql-> close();
 
 header('Location: register.php');
+
+?>
